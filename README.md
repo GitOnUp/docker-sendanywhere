@@ -8,6 +8,7 @@ The original purpose of this fork was to process images for my wife and I and co
 Every minute, the script runs on the contents of /home/ubuntu/Downloads, with the assumption SendAnywhere is storing its files there.  For image files, it resizes them to something web-acceptable, then strips EXIF and applies EXIF rotations.  It stores them in a "web" output directory.  The original file is moved to an "all" directory.  These directories are mapped on the host, to approximate a SendAnywhere daemon on said host.
 
 Configure
+---------
 
 SendAnywhere keeps a configuration file called config.ini.  In *NIX, this resides at:
 ```
@@ -38,6 +39,7 @@ USERPASSWORD=<redacted>         # This will be a hash of your SendAnywhere passw
 ```
 
 Build
+-----
 ```
 git clone https://github.com/GitOnUp/docker-sendanywhere.git
 # copy the config file into docker-sendanywhere.git
@@ -45,6 +47,7 @@ docker build --rm -t GitOnUp/docker-sendanywhere docker-sendanywhere
 ```
 
 Run
+---
 ```
 docker run --name home-cloud -d --restart=always -v <HOST_ALL_DIRECTORY>:/home/ubuntu/all_uploads -v <HOST_WEB_DIRECTORY>:/home/ubuntu/web_uploads -p 6080:6080 GitOnUp/docker-sendanywhere
 ```
