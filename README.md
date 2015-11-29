@@ -42,8 +42,8 @@ Build
 -----
 ```
 git clone https://github.com/GitOnUp/docker-sendanywhere.git
-# copy the config file into docker-sendanywhere.git
-docker build --rm -t GitOnUp/docker-sendanywhere docker-sendanywhere
+# copy the config file into docker-sendanywhere
+docker build --rm -t gitonup/docker-sendanywhere docker-sendanywhere
 ```
 
 Run
